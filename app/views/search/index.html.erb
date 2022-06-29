@@ -1,0 +1,32 @@
+<h1 Class="text-center"> <%= pluralize(@posts.count,'resultados')%></h1>
+
+ 
+ 
+<%=render 'search/search'%>
+
+<div class="container">
+    <table class="table table-dark bg-dark table-striped">
+        <thead>
+            <tr>
+                <th><%=sort_link(@q,:title,"Nombre", default_order: :asc) %></th>
+                <th><%=sort_link(@q, :body,"Descripción") %></th>
+                <th><%=sort_link(@q, :prize, "Precio") %></th>
+                <th><%=sort_link(@q, :size, "Talla") %></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post|%>
+            <tr>
+               <th><%=link_to post.title, post%></th>
+               <th><%=link_to post.body, post %></th>
+               <th><%=link_to post.price, post%></th>
+               <th><%=link_to post.size, post%></th>
+               <th><%=link_to "Ver", post%></th>
+            </tr>
+          <%end%>
+        </tbody>
+ </div>
+
+
+ 

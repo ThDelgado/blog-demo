@@ -72,3 +72,6 @@ group :test do
 end
 
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main'
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
+gem 'faker'
